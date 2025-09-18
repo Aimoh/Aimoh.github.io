@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Свадьба Абдулазиз и Севинч</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@400;700&family=Parisienne&family=Tangerine:wght@700&family=Petit+Formal+Script&family=Marck+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background-color: #faf7f5;
+            color: #5a4c43;
+            line-height: 1.6;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="none" stroke="rgba(222,207,182,0.3)" stroke-width="1" d="M20,20 Q50,10 80,20 Q90,50 80,80 Q50,90 20,80 Q10,50 20,20 Z"></path></svg>');
+            background-size: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .invitation-card {
+            background: #fff;
+            padding: 60px 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #e8e1d9;
+            transition: transform 0.3s ease;
+        }
+
+        .invitation-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .invitation-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #d4af37, #f8f0e3, #d4af37);
+        }
+
+        .decoration {
+            position: absolute;
+            opacity: 0.15;
+            z-index: 0;
+            color: #d4af37;
+        }
+
+        .decoration-1 {
+            top: 20px;
+            right: 20px;
+            font-size: 80px;
+            font-family: 'Parisienne', cursive;
+            transform: rotate(15deg);
+        }
+
+        .decoration-2 {
+            bottom: 20px;
+            left: 20px;
+            font-size: 80px;
+            font-family: 'Parisienne', cursive;
+            transform: rotate(-15deg);
+        }
+
+        .decoration-3 {
+            top: 50%;
+            left: 20px;
+            font-size: 60px;
+            transform: translateY(-50%) rotate(-10deg);
+        }
+
+        .decoration-4 {
+            top: 50%;
+            right: 20px;
+            font-size: 60px;
+            transform: translateY(-50%) rotate(10deg);
+        }
+
+        .countdown {
+            margin: 25px 0;
+            font-size: 22px;
+            color: #8b7355;
+            font-weight: bold;
+        }
+
+        .countdown-numbers {
+            font-size: 28px;
+            color: #d4af37;
+            margin-top: 8px;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+        }
+
+        .names {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 52px;
+            margin-bottom: 15px;
+            color: #d4af37;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-family: 'Parisienne', cursive;
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #8b7355;
+            line-height: 1.3;
+        }
+
+        .details {
+            margin: 30px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .date-time-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+
+        .date-box, .time-box {
+            background: linear-gradient(135deg, #f8f4f0 0%, #fcf9f5 100%);
+            border: 2px solid #e8e1d9;
+            border-radius: 15px;
+            padding: 20px 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+            min-width: 200px;
+            transition: all 0.3s ease;
+        }
+
+        .date-box:hover, .time-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .date-box::before, .time-box::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 1px solid #d4af37;
+            border-radius: 18px;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .date-label, .time-label {
+            font-size: 16px;
+            color: #8b7355;
+            margin-bottom: 8px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .date, .time {
+            margin: 5px 0;
+            font-size: 26px;
+            color: #d4af37;
+            font-weight: 700;
+        }
+
+        .date {
+            font-weight: bold;
+        }
+
+        .place {
+            margin-top: 25px;
+            font-style: italic;
+            font-size: 22px;
+        }
+
+        .place a {
+            color: #8b7355;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .place a:hover {
+            color: #d4af37;
+            text-decoration: underline;
+        }
+
+        .message {
+            margin: 40px 0;
+            font-size: 28px;
+            line-height: 1.8;
+        }
+
+        .rsvp {
+            margin-top: 40px;
+            padding: 16px 35px;
+            background-color: #d4af37;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 19px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .rsvp:hover {
+            background-color: #b8941f;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(184, 148, 31, 0.4);
+        }
+
+        .contacts {
+            margin-top: 35px;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .closing-message {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 18px;
+            color: #8b7355;
+            line-height: 1.6;
+        }
+
+        .telegram-link {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .telegram-link:hover {
+            color: #b8941f;
+            text-decoration: underline;
+        }
+
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+            display: flex;
+            gap: 8px;
+        }
+
+        .language-toggle button {
+            background: none;
+            border: 1px solid #d4af37;
+            color: #8b7355;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .language-toggle button.active {
+            background-color: #d4af37;
+            color: white;
+        }
+
+        .floral-border {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .floral-corner {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-color: #d4af37;
+            opacity: 0.6;
+        }
+
+        .top-left {
+            top: 0;
+            left: 0;
+            border-top: 2px solid;
+            border-left: 2px solid;
+        }
+
+        .top-right {
+            top: 0;
+            right: 0;
+            border-top: 2px solid;
+            border-right: 2px solid;
+        }
+
+        .bottom-left {
+            bottom: 0;
+            left: 0;
+            border-bottom: 2px solid;
+            border-left: 2px solid;
+        }
+
+        .bottom-right {
+            bottom: 0;
+            right: 0;
+            border-bottom: 2px solid;
+            border-right: 2px solid;
+        }
+
+        @media (max-width: 768px) {
+            .invitation-card {
+                padding: 50px 25px;
+            }
+
+            .names {
+                font-size: 42px;
+            }
+
+            .subtitle {
+                font-size: 22px;
+            }
+
+            .date-time-container {
+                gap: 20px;
+            }
+
+            .date-box, .time-box {
+                padding: 15px 20px;
+                min-width: 160px;
+            }
+
+            .date, .time {
+                font-size: 22px;
+            }
+
+            .place {
+                font-size: 20px;
+            }
+
+            .countdown {
+                font-size: 20px;
+            }
+
+            .countdown-numbers {
+                font-size: 24px;
+            }
+
+            .message {
+                font-size: 22px;
+            }
+
+            .closing-message {
+                font-size: 16px;
+            }
+
+            .decoration-1, .decoration-2 {
+                font-size: 60px;
+            }
+
+            .decoration-3, .decoration-4 {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .invitation-card {
+                padding: 40px 20px;
+            }
+
+            .names {
+                font-size: 36px;
+            }
+
+            .subtitle {
+                font-size: 20px;
+            }
+
+            .date-time-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .date-box, .time-box {
+                padding: 15px;
+                min-width: auto;
+                width: 100%;
+                max-width: 250px;
+                margin: 0 auto;
+            }
+
+            .date, .time {
+                font-size: 20px;
+            }
+
+            .place {
+                font-size: 18px;
+            }
+
+            .countdown {
+                font-size: 18px;
+            }
+
+            .countdown-numbers {
+                font-size: 20px;
+            }
+
+            .message {
+                font-size: 20px;
+            }
+
+            .closing-message {
+                font-size: 15px;
+            }
+
+            .language-toggle {
+                top: 15px;
+                right: 15px;
+            }
+
+            .language-toggle button {
+                padding: 5px 10px;
+                font-size: 14px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .heart {
+            color: #e88ba0;
+            animation: pulse 2s infinite;
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="invitation-card">
+        <div class="floral-border">
+            <div class="floral-corner top-left"></div>
+            <div class="floral-corner top-right"></div>
+            <div class="floral-corner bottom-left"></div>
+            <div class="floral-corner bottom-right"></div>
+        </div>
+
+        <div class="language-toggle">
+            <button id="btn-uz" onclick="changeLanguage('uz')">UZ</button>
+            <button id="btn-ru" class="active" onclick="changeLanguage('ru')">RU</button>
+        </div>
+
+        <div class="decoration decoration-1">♥</div>
+        <div class="decoration decoration-2">♥</div>
+        <div class="decoration decoration-3">✿</div>
+        <div class="decoration decoration-4">✿</div>
+
+        <h1 class="names">Абдулазиз & Севинч</h1>
+        <div class="subtitle" id="subtitle">приглашаем Вас на нашу свадьбу</div>
+
+        <div class="message" id="message">
+            Дорогие друзья и родные!<br>
+            Мы счастливы разделить с вами наш особенный день<br>
+            и будем счастливы видеть вас среди гостей.
+        </div>
+
+        <div class="date-time-container">
+            <div class="date-box">
+                <div class="date-label">Дата</div>
+                <div class="date" id="date">11 октября 2025 года</div>
+            </div>
+            <div class="time-box">
+                <div class="time-label">Время</div>
+                <div class="time" id="time">18:00</div>
+            </div>
+        </div>
+
+        <div class="place" id="place">
+            <a href="https://maps.app.goo.gl/oyMJCqKQPTVR5kRg9" target="_blank">
+                <i class="fas fa-map-marker-alt"></i> OqSaroy to'yxonasi
+            </a>
+        </div>
+
+        <div class="countdown">
+            До нашего торжества осталось:
+            <div class="countdown-numbers" id="countdown"></div>
+        </div>
+
+        <div class="contacts" id="contacts">
+            <i class="fas fa-phone"></i> +998 90 397 44 74 (Абдулазиз)<br>
+            Или напишите в Telegram:
+            <a href="https://t.me/bakhtiyaroveech" class="telegram-link">
+                <i class="fab fa-telegram"></i> @bakhtiyaroveech
+            </a>
+        </div>
+
+        <div class="closing-message" id="closing-message">
+            С нетерпением ждем встречи с Вами в наш особенный день!
+        </div>
+    </div>
+</div>
+
+<script>
+    // Текущий язык интерфейса (по умолчанию RU)
+    let currentLang = 'ru';
+
+    // Функция для получения параметров из URL
+    function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
+    // Проверяем параметр lang в URL при загрузке страницы
+    window.onload = function() {
+        const langParam = getUrlParameter('lang');
+        if (langParam === 'uz' || langParam === 'ru') {
+            changeLanguage(langParam);
+        } else {
+            changeLanguage('ru');
+        }
+
+        // Запускаем таймер
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    };
+
+    // Таймер обратного отсчета (локализация единиц времени)
+    function updateCountdown() {
+        const weddingDate = new Date('October 11, 2025 18:00:00').getTime();
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+
+        const cntEl = document.getElementById("countdown");
+        if (!cntEl) return;
+
+        if (distance < 0) {
+            cntEl.innerHTML = currentLang === 'uz' ? "To'y bo'lib o'tdi!" : "Свадьба состоялась!";
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Подписи единиц времени по языку
+        const labels = currentLang === 'uz'
+            ? { d: 'kun', h: 'soat', m: 'daqiqa', s: 'soniya' }
+            : { d: 'дней', h: 'часов', m: 'минут', s: 'секунд' };
+
+        cntEl.textContent = `${days} ${labels.d} ${hours} ${labels.h} ${minutes} ${labels.m} ${seconds} ${labels.s}`;
+    }
+
+    function changeLanguage(lang) {
+        const btnUz = document.getElementById('btn-uz');
+        const btnRu = document.getElementById('btn-ru');
+
+        // ✅ Запоминаем выбранный язык
+        currentLang = lang;
+
+        // Обновляем URL без перезагрузки страницы
+        const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?lang=' + lang;
+        window.history.pushState({path: newUrl}, '', newUrl);
+
+        if (lang === 'uz') {
+            btnUz.classList.add('active');
+            btnRu.classList.remove('active');
+
+            document.querySelector('.names').textContent = "Abdulaziz & Sevinch";
+            document.getElementById('subtitle').innerHTML = "Nikoh to'yimizga taklif etamiz";
+            document.querySelector('.date-label').textContent = "Sana";
+            document.getElementById('date').textContent = "11 oktyabr, 2025 yil";
+            document.querySelector('.time-label').textContent = "Vaqt";
+            document.getElementById('time').textContent = "18:00";
+            document.getElementById('place').innerHTML = '<a href="https://maps.app.goo.gl/oyMJCqKQPTVR5kRg9" target="_blank"><i class="fas fa-map-marker-alt"></i> "OqSaroy restorani"</a>';
+            document.getElementById('message').innerHTML = "Hurmatli aziz mehmonimiz!<br>Sizni hayotimizning eng baxtli kuni Nikoh to'yimiz munosabati bilan bo'lib o'tadigan \"Visol oqshomida\" kutib qolamiz.";
+            document.getElementById('contacts').innerHTML = "Aloqa uchun telefon:<br><i class='fas fa-phone'></i> +998 90 397 44 74 (Abdulaziz)<br><br>Yoki Telegram orqali murojaat qiling:<br> <a href='https://t.me/bakhtiyaroveech' class='telegram-link'><i class='fab fa-telegram'></i>@bakhtiyaroveech</a>";
+            document.querySelector('.countdown').innerHTML = "Bizning to'yimizgacha qolgan vaqt:<div class='countdown-numbers' id='countdown'></div>";
+            document.getElementById('closing-message').innerHTML = "Go'zal kunimizda sizni ko'rishdan <br> ma'mnun bo'lamiz!";
+        } else {
+            btnRu.classList.add('active');
+            btnUz.classList.remove('active');
+
+            document.querySelector('.names').textContent = "Абдулазиз & Севинч";
+            document.getElementById('subtitle').innerHTML = "приглашаем Вас на нашу свадьбу";
+            document.querySelector('.date-label').textContent = "Дата";
+            document.getElementById('date').textContent = "11 октября 2025 года";
+            document.querySelector('.time-label').textContent = "Время";
+            document.getElementById('time').textContent = "18:00";
+            document.getElementById('place').innerHTML = '<a href="https://maps.app.goo.gl/oyMJCqKQPTVR5kRg9" target="_blank"><i class="fas fa-map-marker-alt"></i> Ресторан "OqSaroy"</a>';
+            document.getElementById('message').innerHTML = "Дорогие друзья и родные!<br>Мы счастливы разделить с вами наш особенный день<br>и будем счастливы видеть вас среди гостей.";
+            document.getElementById('contacts').innerHTML = "Телефон для связи:<br><i class='fas fa-phone'></i> +998 90 397 44 74 (Абдулазиз)<br><br>Или напишите в Telegram:<br> <a href='https://t.me/bakhtiyaroveech' class='telegram-link'><i class='fab fa-telegram'></i>@bakhtiyaroveech</a>";
+            document.querySelector('.countdown').innerHTML = "До нашего торжества осталось:<div class='countdown-numbers' id='countdown'></div>";
+            document.getElementById('closing-message').innerHTML = "С нетерпением ждем встречи с Вами <br>в наш особенный день!";
+        }
+
+        // Перерисовать счётчик сразу на выбранном языке
+        updateCountdown();
+    }
+</script>
+
+</body>
+</html>
