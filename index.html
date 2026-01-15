@@ -161,16 +161,15 @@
         }
 
         .main-title {
-            font-family: 'Great Vibes', cursive;
-            font-size: 68px;
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            margin-top: 30px;
             margin-bottom: 15px;
-            background: linear-gradient(135deg, #e88ba0, #d4af37);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #5a4c43;
             position: relative;
             display: inline-block;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
+            font-weight: 600;
         }
 
         .main-title::after {
@@ -195,7 +194,7 @@
             background: linear-gradient(135deg, rgba(248, 244, 240, 0.9), rgba(252, 249, 245, 0.9));
             border-radius: 20px;
             padding: 35px 40px;
-            margin: 35px 0;
+            margin: 0 0 35px 0;
             position: relative;
             border: 1px solid rgba(232, 139, 160, 0.1);
             box-shadow: 0 8px 25px rgba(232, 139, 160, 0.1);
@@ -254,17 +253,18 @@
         }
 
         .detail-icon {
-            font-size: 32px;
+            font-size: 28px;
             margin-bottom: 15px;
             color: #e88ba0;
-            height: 60px;
-            width: 60px;
-            background: rgba(232, 139, 160, 0.1);
+            height: 70px;
+            width: 70px;
+            background: linear-gradient(135deg, rgba(232, 139, 160, 0.15), rgba(212, 175, 55, 0.15));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 15px;
+            box-shadow: 0 4px 15px rgba(232, 139, 160, 0.2);
         }
 
         .detail-label {
@@ -451,8 +451,9 @@
             }
             
             .main-title {
-                font-size: 48px;
-                letter-spacing: 1px;
+                font-size: 42px;
+                letter-spacing: 1.5px;
+                margin-top: 25px;
                 margin-bottom: 12px;
             }
 
@@ -588,8 +589,9 @@
             }
             
             .main-title {
-                font-size: 38px;
-                letter-spacing: 0.5px;
+                font-size: 36px;
+                letter-spacing: 1px;
+                margin-top: 20px;
                 margin-bottom: 10px;
             }
 
@@ -752,19 +754,19 @@
                 <button id="btn-ru" onclick="changeLanguage('ru')">RU</button>
             </div>
 
-            <h1 class="main-title">Muhammadziyoxon & Sojidaxon</h1>
-            <div class="subtitle" id="subtitle">Visol oqshomiga taklif etamiz</div>
-
             <div class="message-box">
                 <div class="message" id="message">
                     Hurmatli aziz mehmonimiz! Sizni nikoh to'yimiz munosabati bilan bo'lib o'tadigan "Visol oqshomi" ga taklif etamiz.
                 </div>
             </div>
 
+            <h1 class="main-title">Muhammadziyoxon & Sojidaxon</h1>
+            <div class="subtitle" id="subtitle">Visol oqshomiga taklif etamiz</div>
+
             <div class="details-container">
                 <div class="detail-box">
                     <div class="detail-icon">
-                        <i class="far fa-calendar-alt"></i>
+                        <i class="fas fa-calendar-check"></i>
                     </div>
                     <div class="detail-label" id="date-label">Sana</div>
                     <div class="detail-content" id="date">14 Fevral 2026</div>
@@ -772,7 +774,7 @@
                 
                 <div class="detail-box">
                     <div class="detail-icon">
-                        <i class="far fa-clock"></i>
+                        <i class="fas fa-clock"></i>
                     </div>
                     <div class="detail-label" id="time-label">Vaqt</div>
                     <div class="detail-content" id="time">18:00</div>
@@ -780,7 +782,7 @@
                 
                 <div class="detail-box">
                     <div class="detail-icon">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-map-pin"></i>
                     </div>
                     <div class="detail-label" id="place-label">Manzil</div>
                     <div class="detail-content" id="place">
