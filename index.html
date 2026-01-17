@@ -127,39 +127,6 @@
             border-bottom-right-radius: 15px;
         }
 
-        .language-toggle {
-            position: absolute;
-            top: 25px;
-            right: 25px;
-            z-index: 10;
-            display: flex;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 8px 12px;
-            border-radius: 25px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
-
-        .language-toggle button {
-            background: none;
-            border: none;
-            color: #8b7355;
-            padding: 6px 15px;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 15px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .language-toggle button.active {
-            background: linear-gradient(135deg, #e88ba0, #d4af37);
-            color: white;
-            box-shadow: 0 4px 10px rgba(232, 139, 160, 0.3);
-        }
-
         .initials {
             font-family: 'Cormorant Garamond', serif;
             font-size: 42px;
@@ -636,18 +603,6 @@
                 margin-top: 30px;
             }
             
-            .language-toggle {
-                top: 8px;
-                right: 8px;
-                padding: 6px 10px;
-                gap: 6px;
-            }
-
-            .language-toggle button {
-                padding: 6px 14px;
-                font-size: 14px;
-            }
-
             .map-section {
                 margin: 30px 0;
             }
@@ -791,18 +746,6 @@
                 line-height: 1.5;
             }
             
-            .language-toggle {
-                top: 5px;
-                right: 5px;
-                padding: 5px 8px;
-                gap: 5px;
-            }
-
-            .language-toggle button {
-                padding: 5px 12px;
-                font-size: 13px;
-            }
-
             .map-section {
                 margin: 25px 0;
             }
@@ -835,12 +778,6 @@
             <div class="corner-decoration corner-bl"></div>
             <div class="corner-decoration corner-br"></div>
             
-            <!-- Переключатель языка -->
-            <div class="language-toggle">
-                <button id="btn-uz" class="active" onclick="changeLanguage('uz')">UZ</button>
-                <button id="btn-ru" onclick="changeLanguage('ru')">RU</button>
-            </div>
-
             <div class="initials">М & С</div>
             <div class="greeting" id="greeting">Ассалому алайкум!</div>
             
@@ -875,6 +812,21 @@
                 <div class="venue-landmark" id="venue-landmark">Мўлжал: "Саёҳат" меҳмонхонаси</div>
             </div>
 
+            <div class="map-section" id="map-section">
+                <div class="map-container">
+                    <a href="https://maps.app.goo.gl/9jF8xdzHCFmegzAb8" target="_blank" id="map-link"></a>
+                    <iframe 
+                        src="https://www.google.com/maps?q=41.3274205,69.3357136&hl=ru&z=15&output=embed&iwloc=near&t=m" 
+                        width="100%" 
+                        height="550" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
 
             <div class="closing-section">
                 <div class="closing-text" id="closing-text">Ҳурмат ва эҳтиром ила</div>
@@ -888,73 +840,7 @@
     </div>
 
     <script>
-        // Создаем плавающие сердечки
-        // Текущий язык интерфейса (по умолчанию UZ)
-        let currentLang = 'uz';
-        
-        // Функция для получения параметров из URL
-        function getUrlParameter(name) {
-            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-            var results = regex.exec(location.search);
-            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-        }
-        
-        // Проверяем параметр lang в URL при загрузке страницы
-        window.onload = function() {
-            const langParam = getUrlParameter('lang');
-            if (langParam === 'uz' || langParam === 'ru') {
-                changeLanguage(langParam);
-            } else {
-                changeLanguage('uz');
-            }
-        };
-        
-        function changeLanguage(lang) {
-            const btnUz = document.getElementById('btn-uz');
-            const btnRu = document.getElementById('btn-ru');
-            
-            // Запоминаем выбранный язык
-            currentLang = lang;
-            
-            // Обновляем URL без перезагрузки страницы
-            const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?lang=' + lang;
-            window.history.pushState({path: newUrl}, '', newUrl);
-            
-            if (lang === 'uz') {
-                btnUz.classList.add('active');
-                btnRu.classList.remove('active');
-                
-                document.getElementById('greeting').textContent = "Ассалому алайкум!";
-                document.getElementById('invitation-text').textContent = "Сизни азиз фарзандларимизнинг никоҳ тўйлари муносабати билан бўлиб ўтадиган \"Висол оқшоми\" га таклиф қиламиз";
-                document.getElementById('name-first').textContent = "Мухаммадзиёхон";
-                document.getElementById('name-second').textContent = "Сожидахон";
-                document.getElementById('date-month').textContent = "ФЕВРАЛЬ";
-                document.getElementById('date-day').textContent = "14";
-                document.getElementById('date-year').textContent = "2026 ЙИЛ";
-                document.getElementById('time-section').textContent = "СОАТ 18:00";
-                document.getElementById('venue-name').textContent = "\"EZIDYOR GOLD\" ресторани";
-                document.getElementById('venue-landmark').textContent = "Мўлжал: \"Саёҳат\" меҳмонхонаси";
-                document.getElementById('closing-text').textContent = "Ҳурмат ва эҳтиром ила";
-                document.getElementById('closing-family').textContent = "Мухаммадфоийххон Зиевуддиновлар оиласи";
-            } else {
-                btnRu.classList.add('active');
-                btnUz.classList.remove('active');
-                
-                document.getElementById('greeting').textContent = "Ассаляму алейкум!";
-                document.getElementById('invitation-text').textContent = "Приглашаем вас на свадьбу наших дорогих детей \"Вечер Висол\"";
-                document.getElementById('name-first').textContent = "Мухаммадзиёхон";
-                document.getElementById('name-second').textContent = "Сожидахон";
-                document.getElementById('date-month').textContent = "ФЕВРАЛЬ";
-                document.getElementById('date-day').textContent = "14";
-                document.getElementById('date-year').textContent = "2026 ГОД";
-                document.getElementById('time-section').textContent = "ВРЕМЯ 18:00";
-                document.getElementById('venue-name').textContent = "Ресторан \"EZIDYOR GOLD\"";
-                document.getElementById('venue-landmark').textContent = "Ориентир: Отель \"Саёҳат\"";
-                document.getElementById('closing-text').textContent = "С уважением и почтением";
-                document.getElementById('closing-family').textContent = "Семья Мухаммадфоийххон Зиевуддиновлар";
-            }
-        }
+        // Страница всегда на узбекском языке
     </script>
 </body>
 </html>
