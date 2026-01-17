@@ -160,63 +160,78 @@
             box-shadow: 0 4px 10px rgba(232, 139, 160, 0.3);
         }
 
-        .main-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 52px;
-            margin-top: 30px;
-            margin-bottom: 15px;
+        .initials {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: #d4af37;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .greeting {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
             color: #5a4c43;
-            position: relative;
+            text-align: center;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .guest-name-section {
+            text-align: center;
+            margin-bottom: 30px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            color: #5a4c43;
+        }
+
+        .guest-prefix {
             display: inline-block;
-            letter-spacing: 2px;
-            font-weight: 600;
         }
 
-        .main-title::after {
-            content: "";
-            position: absolute;
-            bottom: -10px;
-            left: 25%;
-            width: 50%;
-            height: 2px;
-            background: linear-gradient(to right, transparent, #e88ba0, #d4af37, transparent);
+        .guest-name-field {
+            display: inline-block;
+            margin: 0 10px;
+            border-bottom: 1px solid #5a4c43;
+            min-width: 150px;
         }
 
-        .subtitle {
-            font-family: 'Marck Script', cursive;
-            font-size: 26px;
+        .guest-suffix {
+            display: inline-block;
+        }
+
+        .invitation-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            color: #5a4c43;
+            text-align: center;
             margin-bottom: 40px;
-            color: #8b7355;
+            line-height: 1.8;
+            font-style: italic;
+            padding: 0 20px;
+        }
+
+        .main-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 72px;
+            color: #d4af37;
+            text-align: center;
+            margin: 40px 0;
             line-height: 1.4;
         }
 
-        .message-box {
-            background: linear-gradient(135deg, rgba(248, 244, 240, 0.9), rgba(252, 249, 245, 0.9));
-            border-radius: 20px;
-            padding: 35px 40px;
-            margin: 0 0 35px 0;
-            position: relative;
-            border: 1px solid rgba(232, 139, 160, 0.1);
-            box-shadow: 0 8px 25px rgba(232, 139, 160, 0.1);
+        .name-first, .name-second {
+            display: block;
+            margin: 10px 0;
         }
 
-        .message-box::before {
-            content: "❧";
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: white;
-            padding: 0 20px;
-            color: #e88ba0;
-            font-size: 24px;
-        }
-
-        .message {
-            font-size: 22px;
-            line-height: 1.8;
-            color: #5a4c43;
-            font-family: 'Playfair Display', serif;
+        .name-separator {
+            display: block;
+            font-size: 48px;
+            margin: 10px 0;
+            font-family: 'Cormorant Garamond', serif;
         }
 
         .details-container {
@@ -408,17 +423,89 @@
             text-decoration: underline;
         }
 
-        .closing-message {
-            margin-top: 35px;
-            font-style: italic;
+        .date-section {
+            text-align: center;
+            margin: 40px 0 20px 0;
+            font-family: 'Cormorant Garamond', serif;
             font-size: 20px;
+            color: #5a4c43;
+            font-weight: 700;
+        }
+
+        .date-month, .date-year {
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+
+        .date-day {
+            font-size: 28px;
+            margin: 0 10px;
+        }
+
+        .date-separator {
+            margin: 0 8px;
             color: #8b7355;
-            line-height: 1.6;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 15px;
-            border-left: 4px solid #e88ba0;
-            border-right: 4px solid #e88ba0;
+        }
+
+        .time-section {
+            text-align: center;
+            margin-bottom: 40px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            color: #5a4c43;
+            font-weight: 700;
+        }
+
+        .venue-section {
+            text-align: center;
+            margin-bottom: 40px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .venue-name {
+            font-size: 20px;
+            color: #5a4c43;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .venue-landmark {
+            font-size: 16px;
+            color: #8b7355;
+        }
+
+        .closing-section {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+
+        .closing-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            color: #5a4c43;
+            margin-bottom: 15px;
+        }
+
+        .closing-family {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            color: #5a4c43;
+        }
+
+        .table-number {
+            text-align: center;
+            margin-top: 30px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            color: #5a4c43;
+        }
+
+        .table-field {
+            display: inline-block;
+            margin: 0 10px;
+            border-bottom: 1px solid #5a4c43;
+            min-width: 80px;
         }
 
         @keyframes gentleAppear {
@@ -754,74 +841,48 @@
                 <button id="btn-ru" onclick="changeLanguage('ru')">RU</button>
             </div>
 
-            <div class="message-box">
-                <div class="message" id="message">
-                    Hurmatli aziz mehmonimiz! Sizni nikoh to'yimiz munosabati bilan bo'lib o'tadigan "Visol oqshomi" ga taklif etamiz.
-                </div>
+            <div class="initials">М & С</div>
+            <div class="greeting" id="greeting">Ассалому алайкум!</div>
+            
+            <div class="guest-name-section">
+                <span class="guest-prefix">Ҳурматли</span>
+                <span class="guest-name-field">_______________</span>
+                <span class="guest-suffix">!</span>
             </div>
 
-            <h1 class="main-title">Muhammadziyoxon & Sojidaxon</h1>
-            <div class="subtitle" id="subtitle">Visol oqshomiga taklif etamiz</div>
-
-            <div class="details-container">
-                <div class="detail-box">
-                    <div class="detail-icon">
-                        <i class="fas fa-calendar-check"></i>
-                    </div>
-                    <div class="detail-label" id="date-label">Sana</div>
-                    <div class="detail-content" id="date">14 Fevral 2026</div>
-                </div>
-                
-                <div class="detail-box">
-                    <div class="detail-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="detail-label" id="time-label">Vaqt</div>
-                    <div class="detail-content" id="time">18:00</div>
-                </div>
-                
-                <div class="detail-box">
-                    <div class="detail-icon">
-                        <i class="fas fa-map-pin"></i>
-                    </div>
-                    <div class="detail-label" id="place-label">Manzil</div>
-                    <div class="detail-content" id="place">
-                        <a href="https://maps.app.goo.gl/9jF8xdzHCFmegzAb8" target="_blank" style="color: #d4af37; text-decoration: none;">
-                            Ezidyor Gold
-                        </a>
-                    </div>
-                </div>
+            <div class="invitation-text" id="invitation-text">
+                Сизни азиз фарзандларимизнинг никоҳ тўйлари муносабати билан бўлиб ўтадиган "Висол оқшоми" га таклиф қиламиз
             </div>
 
-            <div class="map-section" id="map-section">
-                <div class="map-container">
-                    <a href="https://maps.app.goo.gl/9jF8xdzHCFmegzAb8" target="_blank" id="map-link"></a>
-                    <iframe 
-                        src="https://www.google.com/maps?q=41.3274205,69.3357136&hl=ru&z=15&output=embed&iwloc=near&t=m" 
-                        width="100%" 
-                        height="550" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
+            <h1 class="main-title">
+                <div class="name-first" id="name-first">Мухаммадзиёхон</div>
+                <div class="name-separator">&</div>
+                <div class="name-second" id="name-second">Сожидахон</div>
+            </h1>
+
+            <div class="date-section">
+                <span class="date-month" id="date-month">ФЕВРАЛЬ</span>
+                <span class="date-separator"> | </span>
+                <span class="date-day" id="date-day">14</span>
+                <span class="date-separator"> | </span>
+                <span class="date-year" id="date-year">2026 ЙИЛ</span>
             </div>
 
-            <div class="countdown-container">
-                <div class="countdown-title" id="countdown-title">To'yimizgacha qolgan vaqt:</div>
-                <div class="countdown-timer" id="countdown"></div>
+            <div class="time-section" id="time-section">СОАТ 18:00</div>
+
+            <div class="venue-section">
+                <div class="venue-name" id="venue-name">"EZIDYOR GOLD" ресторани</div>
+                <div class="venue-landmark" id="venue-landmark">Мўлжал: "Саёҳат" меҳмонхонаси</div>
             </div>
 
-            <div class="contact-info" id="contacts">
-                Aloqa uchun: 
-                <a href="tel:+998909158000" class="contact-link">
-                    <i class="fas fa-phone"></i> +998 90 915 80 00 (Muhammadziyoxon)
-                </a>
+
+            <div class="closing-section">
+                <div class="closing-text" id="closing-text">Ҳурмат ва эҳтиром ила</div>
+                <div class="closing-family" id="closing-family">Мухаммадфоийххон Зиевуддиновлар оиласи</div>
             </div>
 
-            <div class="closing-message" id="closing-message">
-                Sizni ushbu baxtli kunda kutib qolamiz
+            <div class="table-number">
+                Стол № <span class="table-field">_______</span>
             </div>
         </div>
     </div>
@@ -847,57 +908,7 @@
             } else {
                 changeLanguage('uz');
             }
-            
-            // Запускаем таймер
-            updateCountdown();
-            setInterval(updateCountdown, 1000);
         };
-        
-        // Таймер обратного отсчета
-        function updateCountdown() {
-            const weddingDate = new Date('February 14, 2026 18:00:00').getTime();
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
-            
-            const cntEl = document.getElementById("countdown");
-            if (!cntEl) return;
-            
-            if (distance < 0) {
-                cntEl.innerHTML = currentLang === 'uz' 
-                    ? '<div style="font-size:24px; color:#e88ba0;">To\'y bo\'lib o\'tdi!</div>' 
-                    : '<div style="font-size:24px; color:#e88ba0;">Свадьба состоялась!</div>';
-                return;
-            }
-            
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            // Подписи единиц времени по языку
-            const labels = currentLang === 'uz'
-                ? { d: 'kun', h: 'soat', m: 'daqiqa', s: 'soniya' }
-                : { d: 'дней', h: 'часов', m: 'минут', s: 'секунд' };
-            
-            cntEl.innerHTML = `
-                <div class="countdown-unit">
-                    <div class="countdown-number">${days}</div>
-                    <div class="countdown-label">${labels.d}</div>
-                </div>
-                <div class="countdown-unit">
-                    <div class="countdown-number">${hours}</div>
-                    <div class="countdown-label">${labels.h}</div>
-                </div>
-                <div class="countdown-unit">
-                    <div class="countdown-number">${minutes}</div>
-                    <div class="countdown-label">${labels.m}</div>
-                </div>
-                <div class="countdown-unit">
-                    <div class="countdown-number">${seconds}</div>
-                    <div class="countdown-label">${labels.s}</div>
-                </div>
-            `;
-        }
         
         function changeLanguage(lang) {
             const btnUz = document.getElementById('btn-uz');
@@ -914,50 +925,35 @@
                 btnUz.classList.add('active');
                 btnRu.classList.remove('active');
                 
-                document.querySelector('.main-title').textContent = "Muhammadziyoxon & Sojidaxon";
-                document.getElementById('subtitle').innerHTML = "Visol oqshomiga taklif etamiz";
-                document.getElementById('message').innerHTML = "Hurmatli aziz mehmonimiz! Sizni nikoh to'yimiz munosabati bilan bo'lib o'tadigan \"Visol oqshomi\" ga taklif etamiz.";
-                document.getElementById('date-label').textContent = "Sana";
-                document.getElementById('date').textContent = "14 Fevral 2026";
-                document.getElementById('time-label').textContent = "Vaqt";
-                document.getElementById('time').textContent = "18:00";
-                document.getElementById('place-label').textContent = "Manzil";
-                document.getElementById('place').innerHTML = '<a href="https://maps.app.goo.gl/9jF8xdzHCFmegzAb8" target="_blank" style="color: #d4af37; text-decoration: none;">Ezidyor Gold</a>';
-                if (document.getElementById('map-link')) {
-                    document.getElementById('map-link').href = 'https://maps.app.goo.gl/9jF8xdzHCFmegzAb8';
-                }
-                document.getElementById('countdown-title').textContent = "To'yimizgacha qolgan vaqt:";
-                document.getElementById('contacts').innerHTML = `Aloqa uchun: 
-                    <a href="tel:+998909158000" class="contact-link">
-                        <i class="fas fa-phone"></i> +998 90 915 80 00 (Muhammadziyoxon)
-                    </a>`;
-                document.getElementById('closing-message').innerHTML = "Sizni ushbu baxtli kunda kutib qolamiz";
+                document.getElementById('greeting').textContent = "Ассалому алайкум!";
+                document.getElementById('invitation-text').textContent = "Сизни азиз фарзандларимизнинг никоҳ тўйлари муносабати билан бўлиб ўтадиган \"Висол оқшоми\" га таклиф қиламиз";
+                document.getElementById('name-first').textContent = "Мухаммадзиёхон";
+                document.getElementById('name-second').textContent = "Сожидахон";
+                document.getElementById('date-month').textContent = "ФЕВРАЛЬ";
+                document.getElementById('date-day').textContent = "14";
+                document.getElementById('date-year').textContent = "2026 ЙИЛ";
+                document.getElementById('time-section').textContent = "СОАТ 18:00";
+                document.getElementById('venue-name').textContent = "\"EZIDYOR GOLD\" ресторани";
+                document.getElementById('venue-landmark').textContent = "Мўлжал: \"Саёҳат\" меҳмонхонаси";
+                document.getElementById('closing-text').textContent = "Ҳурмат ва эҳтиром ила";
+                document.getElementById('closing-family').textContent = "Мухаммадфоийххон Зиевуддиновлар оиласи";
             } else {
                 btnRu.classList.add('active');
                 btnUz.classList.remove('active');
                 
-                document.querySelector('.main-title').textContent = "Мухаммадзиёхон & Сожидахон";
-                document.getElementById('subtitle').innerHTML = "Приглашаем вас на наше торжество";
-                document.getElementById('message').innerHTML = "Дорогой наш гость, мы будем счастливы видеть Вас в день нашей свадьбы!";
-                document.getElementById('date-label').textContent = "Дата";
-                document.getElementById('date').textContent = "14 Февраля 2026";
-                document.getElementById('time-label').textContent = "Время";
-                document.getElementById('time').textContent = "18:00";
-                document.getElementById('place-label').textContent = "Место";
-                document.getElementById('place').innerHTML = '<a href="https://maps.app.goo.gl/9jF8xdzHCFmegzAb8" target="_blank" style="color: #d4af37; text-decoration: none;">Ezidyor Gold</a>';
-                if (document.getElementById('map-link')) {
-                    document.getElementById('map-link').href = 'https://maps.app.goo.gl/9jF8xdzHCFmegzAb8';
-                }
-                document.getElementById('countdown-title').textContent = "До нашей свадьбы осталось:";
-                document.getElementById('contacts').innerHTML = `Для связи: 
-                    <a href="tel:+998909158000" class="contact-link">
-                        <i class="fas fa-phone"></i> +998 90 915 80 00 (Мухаммадзиёхон)
-                    </a>`;
-                document.getElementById('closing-message').innerHTML = "С нетерпением ждем встречи с Вами в наш особенный день!";
+                document.getElementById('greeting').textContent = "Ассаляму алейкум!";
+                document.getElementById('invitation-text').textContent = "Приглашаем вас на свадьбу наших дорогих детей \"Вечер Висол\"";
+                document.getElementById('name-first').textContent = "Мухаммадзиёхон";
+                document.getElementById('name-second').textContent = "Сожидахон";
+                document.getElementById('date-month').textContent = "ФЕВРАЛЬ";
+                document.getElementById('date-day').textContent = "14";
+                document.getElementById('date-year').textContent = "2026 ГОД";
+                document.getElementById('time-section').textContent = "ВРЕМЯ 18:00";
+                document.getElementById('venue-name').textContent = "Ресторан \"EZIDYOR GOLD\"";
+                document.getElementById('venue-landmark').textContent = "Ориентир: Отель \"Саёҳат\"";
+                document.getElementById('closing-text').textContent = "С уважением и почтением";
+                document.getElementById('closing-family').textContent = "Семья Мухаммадфоийххон Зиевуддиновлар";
             }
-            
-            // Перерисовать счётчик сразу на выбранном языке
-            updateCountdown();
         }
     </script>
 </body>
